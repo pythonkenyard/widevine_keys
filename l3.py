@@ -81,6 +81,14 @@ def WV_Function(pssh, lic_url, cert_b64=None):
 			"signature": 			str(signature), 
 			"version":				'V4'
 			}))
+# All4 support
+	responses.append(requests.post(url=lic_url, headers=headers.headers, params=params,
+		json={
+		"request_id":headers.requestid,
+		"token":headers.token,
+		"video":{"type":"ondemand","url":headers.url},
+		"message":str(request, "utf-8" ),
+		}))
 	for idx, response in enumerate(responses):
 		try:
 			str(response.content, "utf-8")
