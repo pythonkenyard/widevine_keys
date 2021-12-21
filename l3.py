@@ -87,7 +87,7 @@ def WV_Function(pssh, lic_url, cert_b64=None):
 		json={
 		"request_id":headers.requestid,
 		"token":headers.token,
-		"video":{"type":"ondemand","url":headers.url},
+		"video":{"type":"ondemand","url":MDP_URL},
 		"message":str(request, "utf-8" ),
 		}))
 	
